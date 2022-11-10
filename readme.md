@@ -31,3 +31,19 @@ and open this http in your prefered browser <chrome was used>
 ```bash
   http://127.0.0.1:8050/
   ```
+
+  
+  # Power BI presentation
+
+  - [Link to download our content]()
+
+  
+  # Our notebooks
+
+  - [Link to access our notebooks](https://github.com/Yannngn/UN_MAAT_app/tree/master/notebooks)
+
+  
+  # Datasets
+
+  
+
