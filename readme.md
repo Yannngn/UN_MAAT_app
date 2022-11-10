@@ -35,7 +35,7 @@ and open this http in your prefered browser <chrome was used>
   
   # Power BI presentation
 
-  - [Link to download our content]()
+  - [Link to download our content](https://github.com/Yannngn/UN_MAAT_app/raw/master/power_bi/CO2_EMISSONS.pbix)
 
   
   # Our notebooks
@@ -46,4 +46,4 @@ and open this http in your prefered browser <chrome was used>
   # Datasets
 
   
-
+  - [Link to obtain all datasets](https://github.com/Yannngn/UN_MAAT_app/tree/master/data)
