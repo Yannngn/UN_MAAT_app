@@ -1,0 +1,19 @@
+.app-header {
+    height: auto;
+    border: thin turquoise solid;
+    background-color: #2a2a2a;
+    text-align: middle;
+    border-radius: 30px;
+}
+
+.app-header .app-header--title {
+    font-size: 36px;
+    text-align: middle;
+    color: aquamarine;
+}
+
+.app-header .app-header--subtitle {
+    font-size: 32px;
+    text-align: middle;
+    color: aquamarine;
+}
