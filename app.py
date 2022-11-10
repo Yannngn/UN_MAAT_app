@@ -58,7 +58,7 @@ app.layout = html.Div(children=[
                     'color': COLORS['text']}),
         html.Div(children=[
                     dcc.Dropdown(list(MACRO.keys()), 
-                                'Norte', 
+                                'North', 
                                 id='region-dropdown-time',
                                 style={"width": "50%",
                                         'margin-left': '20px',
@@ -134,8 +134,8 @@ app.layout = html.Div(children=[
                     'margin-left': '20px',
                     'color': COLORS['text']}),
         
-        dcc.Dropdown(SECTORS,
-                     SECTORS[0], 
+        dcc.Dropdown(list(SECTORS.keys()),
+                     list(SECTORS.keys())[2], 
                      id='region-dropdown-map',
                      style={"width": "50%",
                             'margin-left': '20px',

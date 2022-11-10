@@ -4,9 +4,14 @@ S = ['RS', 'SC', 'PR']
 CO = ['MT', 'MS', 'DF', 'GO']
 N = ['AM', 'PA', 'AC', 'RO', 'RR', 'TO', 'AP']
 
-MACRO = {'Nordeste': NE, 'Sudeste': SE, 'Sul': S, 'Centro-oeste': CO, 'Norte': N}
+MACRO = {'Northeast': NE, 'Southeast': SE, 'South': S, 'Center-West': CO, 'North': N}
 
-SECTORS = ['Agropecuária', 'Energia', 'Mudança de Uso da Terra e Floresta', 'Processos Industriais', 'Resíduos ']
+SECTORS = {'Agriculture': 'Agropecuária', 
+           'Energy Production': 'Energia', 
+           'Land Use, Land Use Change and Forestry': 'Mudança de Uso da Terra e Floresta', 
+           'Industrial Processing': 'Processos Industriais', 
+           'Residues': 'Resíduos '
+}
 
 STATES = {
     'AC': 'Acre',

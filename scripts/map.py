@@ -18,15 +18,15 @@ def update(fig):
 def get_data():
     data = pd.read_csv(DATA, index_col='Unnamed: 0')
     data.columns = ['Setor'] + list(data.columns[1:])
-    data = data.groupby(['Setor', 'Estado']).sum().reset_index()
-    data['Geral'] = data[data.columns[2:34]].sum(axis=1)
+    data = data.groupby(['Setor', 'Estado']).sum(numeric_only=False).reset_index()
+    data['Geral'] = data[data.columns[2:34]].sum(axis=1,numeric_only=False)
     
     return data
 
 def get_geo_data():
     #stack_data = pd.read_csv(STACKED)
     estados_borders = gpd.read_file(STATES_BORDERS)
-    estados_borders['Estado'] = estados_borders.ESTADO
+    estados_borders['State'] = estados_borders.ESTADO
     estados_borders = estados_borders.drop(columns=['object_id_', 'agreount_', 'ESTADO'])
 
     #stack_data = pd.merge(left=stack_data, right=estados_borders, on=['Estado'])
@@ -34,20 +34,21 @@ def get_geo_data():
     return estados_borders.to_json()
 
 
-def mapa_brasil(setor):
+def mapa_brasil(sector):
     stack_data = pd.read_csv(STACKED)
+    stack_data.columns = ['State', 'Sector', 'Year', 'CO2']
     geo_j = get_geo_data()
     j = json.loads(geo_j)
     
     crange = (stack_data['CO2'].quantile((0, 1))).tolist()
     
-    m = px.choropleth(stack_data[stack_data.Setor == setor],               
+    m = px.choropleth(stack_data[stack_data.Sector == SECTORS[sector]],               
                   geojson=j,
-                  locations='Estado',
-                  featureidkey="properties.Estado",         
+                  locations='State',
+                  featureidkey="properties.State",         
                   color="CO2",
-                  hover_name="Estado",  
-                  animation_frame="Ano",
+                  hover_name="State",  
+                  animation_frame="Year",
                   range_color=crange,
                   color_continuous_scale='viridis')
     
